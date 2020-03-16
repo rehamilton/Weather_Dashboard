@@ -1,0 +1,21 @@
+.jumbotron {
+    padding: 32px !important;
+}
+
+.main div {
+    padding: 20px;
+
+}
+
+.card {
+    margin: 5px !important;
+    min-height: 131px;
+}
+
+.forecast {
+    background-color: blue;
+}
+
+h5 {
+    font-weight: unset !important;
+}
