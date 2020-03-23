@@ -66,6 +66,10 @@ function displayCurrent (city) {
                 src: "",
                 alt: ""});
             $("#date").text(" ");
+            $("#uv").removeClass("bg-danger");
+            $("#uv").removeClass("bg-warning");
+            $("#uv").removeClass("bg-success");
+            $("#uv").text(" ");
         }
     }).then(function(response) {
 
@@ -128,12 +132,18 @@ function getUV(lat, lon) {
 
         if (uvValue <=3 ) {
             $("#uv").addClass("bg-success");
+            $("#uv").removeClass("bg-warning");
+            $("#uv").removeClass("bg-danger");
         }
         else if (uvValue >= 3 || uvValue <= 6) {
             $("#uv").addClass("bg-warning");
+            $("#uv").removeClass("bg-success");
+            $("#uv").removeClass("bg-danger");
         }
         else {
             $("#uv").addClass("bg-danger");
+            $("#uv").removeClass("bg-warning");
+            $("#uv").removeClass("bg-success");
         }
 
     })
