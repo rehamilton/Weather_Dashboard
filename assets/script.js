@@ -126,6 +126,16 @@ function getUV(lat, lon) {
         //place uv value in relevant field
         $("#uv").text(uvValue);
 
+        if (uvValue <=3 ) {
+            $("#uv").addClass("bg-success");
+        }
+        else if (uvValue >= 3 || uvValue <= 6) {
+            $("#uv").addClass("bg-warning");
+        }
+        else {
+            $("#uv").addClass("bg-danger");
+        }
+
     })
 }
 
