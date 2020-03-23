@@ -38,7 +38,7 @@ On opening the page the dashboard will show the details of the last city searche
 
 When a city is searched the current weather and forecast will be updated. If there is an error all details will be empty and an error will show.
 
-![markdownAssets/searchBttn.png](https://github.com/rehamilton/Weather_Dashboard/blob/master/assets/searchBttn.PNG "Search Button")
+![markdownAssets/searchBttn.png](https://github.com/rehamilton/Weather_Dashboard/blob/master/assets/SearchBttn.PNG "Search Button")
 
 
 ## On click of a saved City
