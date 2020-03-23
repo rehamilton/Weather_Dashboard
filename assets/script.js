@@ -169,7 +169,7 @@ function displayForecast(city) {
             var dayFC = dateFC.getDate()
             var fullDateFC = dayFC + "/" + monthFC + "/" + yearFC
             var iconFC = (response.list[i].weather[0].icon);
-            var iconUrlFC = "http://openweathermap.org/img/w/" + iconFC + ".png";
+            var iconUrlFC = "https://openweathermap.org/img/w/" + iconFC + ".png";
 
 
             //create HTML to contain the above information and append to forecast area
