@@ -1,14 +1,21 @@
 //start with an empty array
-var cities = []
 
-displayCurrent()
 
-function displayCurrent () {
 
-    var city = "Greenock";
+$("button").on("click", function () {
+
+    displayCurrent(event);
+    displayForecast(event);
+
+}); 
+
+
+
+function displayCurrent (event) {
+
+    var city = $("#citySearch").val()
     var currentUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d6db38001e351111dd620023b7c30d07";
-    
-    
+        
     // 5 day forecast
     $.ajax({
         url: currentUrl,
@@ -24,16 +31,16 @@ function displayCurrent () {
         getUV(lat, lon)
         
         //get temperature and format it from kelvin to celsius to 2 decimal places
-        var tempInt =((response.main.temp)-273.1).toFixed(2);
-        $("#temperature").text(tempInt);
+        var tempInt = ((response.main.temp)-273.1).toFixed(2);
+        $("#temperature").text( + tempInt + "℃");
 
         //get humidity
         var humidity = (response.main.humidity);
-        $("#humidity").text(humidity);
+        $("#humidity").text(humidity +" %");
 
         //get windspeed and change to km/h to the nearest whole figure
         var windSpeed = ((response.wind.speed)*3.6).toFixed(0);
-        $("#wind").text(windSpeed)
+        $("#wind").text(windSpeed+ "KM/H")
 
         //get city name
         var city = (response.name);
@@ -47,9 +54,11 @@ function displayCurrent () {
         //get icon name and lookup icon url to return image
         var icon = (response.weather[0].icon);
         var iconUrl = "http://openweathermap.org/img/w/" + icon + ".png";
-        $("#icon").attr("src", iconUrl)
+        $("#icon").attr({
+            src: iconUrl,
+            alt: "weatherIcon"})
 
-        console.log(response);
+        //console.log(response);
 
     });
 }
@@ -78,35 +87,35 @@ function getUV(lat, lon) {
 }
 
 function currentDate(unixDate) {
-
+ 
+    //change date format
     var date = new Date(unixDate)
     var year = date.getFullYear()
     var month = date.getMonth()+1
     var day = date.getDate()
+    //Bring all variables together to create correct date format
     var fullDate = day + "/" + month + "/" + year
 
-    $("#date").text(fullDate)
+    //Place in dtae field
+    $("#date").text("(" + fullDate + ")")
 
 }
 
 
 function displayForecast() {
 
-    var city = "Greenock";
+    var city = $("#citySearch").val();
     var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=d6db38001e351111dd620023b7c30d07";
-    
-    
-    
-    
-    
+
     // 5 day forecast
     $.ajax({
         url: forecastUrl,
         method: "GET"
     }).then(function(response) {
 
-        for (i = 0 ; i <= 50 ; i+=8) {
-            var tempFC ="Temp: " + ((response.list[i].main.temp)-273.1).toFixed(2);
+        //loop through the api object array for each day (day split into 3 hr increments so every 7th index required)
+        for (i = 7 ; i <= 40 ; i+=7) {
+            var tempFC ="Temp: " + ((response.list[i].main.temp)-273.1).toFixed(2) + " ℃";
             var humidityFC = "Humidity: " + (response.list[i].main.humidity) + "%";
             var unixDateFC = (response.list[i].dt)*1000;
             var dateFC = new Date(unixDateFC)
@@ -117,8 +126,8 @@ function displayForecast() {
             var iconFC = (response.list[i].weather[0].icon);
             var iconUrlFC = "http://openweathermap.org/img/w/" + iconFC + ".png";
 
-            
-            
+
+            //create HTML to contain the above information and append to forecast area
             var column = $("<div>").attr("class", "col card forecast text-light text-center")
             var dateLine = $("<h5>").text(fullDateFC)
             var iconLine = $("<div>")
@@ -129,6 +138,8 @@ function displayForecast() {
             iconLine.append(iconImg)
 
             var tempLine = $("<div>").text(tempFC)
+       
+            
             var humidityLine = $("<div>").text(humidityFC)
 
             column.append(dateLine, iconLine, tempLine, humidityLine)
@@ -142,5 +153,6 @@ function displayForecast() {
 
 }
 
-displayForecast()
+function createButton() {
 
+}
