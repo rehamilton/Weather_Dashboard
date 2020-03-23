@@ -4,7 +4,6 @@
 
 .main div {
     padding: 20px;
-
 }
 
 .card {
@@ -18,4 +17,19 @@
 
 h5 {
     font-weight: unset !important;
+}
+
+.input-group {
+    margin-top: 5px !important;
+}
+
+.btn-light {
+    margin: unset !important;
+    border-color: rgb(221, 220, 220) !important;
+    border-radius: unset !important;
+    background-color: white !important;
+}
+
+.forecast {
+    border-radius: 20px;
 }
