@@ -11,7 +11,7 @@ $("button").on("click", function () {
 
 
 
-function displayCurrent (event) {
+function displayCurrent () {
 
     var city = $("#citySearch").val()
     var currentUrl = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=d6db38001e351111dd620023b7c30d07";
@@ -40,7 +40,7 @@ function displayCurrent (event) {
 
         //get windspeed and change to km/h to the nearest whole figure
         var windSpeed = ((response.wind.speed)*3.6).toFixed(0);
-        $("#wind").text(windSpeed+ "KM/H")
+        $("#wind").text(windSpeed+ " km/h")
 
         //get city name
         var city = (response.name);
@@ -103,6 +103,8 @@ function currentDate(unixDate) {
 
 
 function displayForecast() {
+
+    $("#forecast").empty()
 
     var city = $("#citySearch").val();
     var forecastUrl = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=d6db38001e351111dd620023b7c30d07";
