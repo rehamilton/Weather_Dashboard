@@ -205,6 +205,12 @@ function saveCity(city) {
 
 }
 
+function getCity(){
+    var city = $(this).attr("data-city");
+    displayCurrent(city);
+    displayForecast(city);
+}
+
 // When an item is searched add it to the list of cities
 function createButton(city) {
     var button = $("<button>").attr({
@@ -213,15 +219,10 @@ function createButton(city) {
         "data-city": city})
 
     button.text(city)
+    button.on("click", getCity)
     $("#cityBttns").append(button)
     
 }
 
 //when one of the city buttons is clicked the city name is extracted and run through the relevant functions
-$(".city_button").on("click", function(){
-    var city = $(this).attr("data-city");
-    console.log(city);
-    console.log($(this));
-    displayCurrent(city);
-    displayForecast(city);
-})
+$(".city_button").on("click", getCity)
