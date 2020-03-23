@@ -24,11 +24,15 @@ WHEN I click on a city in the search history
 THEN I am again presented with current and future conditions for that city
 ```
 
+## Live Link
+
+### [Scheduler Link](https://rehamilton.github.io/Weather_Dashboard/ "Weather")
+
 ## On Page Open
 
 On opening the page the dashboard will show the details of the last city searched or default to Perth. Any previous searches will be shown in buttons on the side of the page.
 
-![markdownAssets/OnPageOen.png]( "Page Open")
+![markdownAssets/OnPageOpen.png](https://github.com/rehamilton/Weather_Dashboard/blob/master/assets/OnPageOpen.PNG "Page Open")
 
 ## On search of city
 
