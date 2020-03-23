@@ -130,12 +130,13 @@ function getUV(lat, lon) {
         //place uv value in relevant field
         $("#uv").text(uvValue);
 
+        //format UV field based on result
         if (uvValue <=3 ) {
             $("#uv").addClass("bg-success");
             $("#uv").removeClass("bg-warning");
             $("#uv").removeClass("bg-danger");
         }
-        else if (uvValue >= 3 || uvValue <= 6) {
+        else if (uvValue >= 3 && uvValue <= 7) {
             $("#uv").addClass("bg-warning");
             $("#uv").removeClass("bg-success");
             $("#uv").removeClass("bg-danger");
@@ -194,7 +195,7 @@ function displayForecast(city) {
             var iconUrlFC = "https://openweathermap.org/img/w/" + iconFC + ".png";
 
 
-            //create HTML to contain the above information and append to forecast area
+            //create HTML which contains each of the above variables and append all to the forecast area
             var column = $("<div>").attr("class", "col-lg-* card forecast text-light text-center")
             var dateLine = $("<h5>").text(fullDateFC)
             var iconLine = $("<div>")
@@ -227,6 +228,7 @@ function saveCity(city) {
 
 }
 
+//function gets the city from the field data attribute to change the information shown (happens when a city button is pressed)
 function getCity(){
     var city = $(this).attr("data-city");
     displayCurrent(city);

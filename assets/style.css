@@ -2,28 +2,34 @@
     padding: 32px !important;
 }
 
+/*small changes for aesthetics*/
 .main div {
     padding: 20px;
 }
 
+/*style the forecast tiles*/
 .card {
     margin: 5px !important;
     min-height: 131px;
     min-width: 150px;
 }
 
+/*style the forecast tiles*/
 .forecast {
     background-color: blue;
 }
 
+/*looked wrong bold*/
 h5 {
     font-weight: unset !important;
 }
 
+/*small changes for aesthetics*/
 .input-group {
     margin-top: 5px !important;
 }
 
+/*style city buttons*/
 .btn-light {
     margin: unset !important;
     border-color: rgb(221, 220, 220) !important;
@@ -31,11 +37,12 @@ h5 {
     background-color: white !important;
 }
 
+/*small changes for aesthetics*/
 .forecast {
     border-radius: 20px;
 }
 
+/*styling for title when error occurs*/
 .error {
     color: red;
 }
-
