@@ -9,6 +9,7 @@
 .card {
     margin: 5px !important;
     min-height: 131px;
+    min-width: 150px;
 }
 
 .forecast {
@@ -38,10 +39,3 @@ h5 {
     color: red;
 }
 
-/*Changes to formatting when screen size changes*/
-@media screen and (max-width: 640px) {
-
-    .forecast {
-        flex-direction: column;
-    }
-}

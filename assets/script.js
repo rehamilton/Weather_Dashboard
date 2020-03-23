@@ -195,7 +195,7 @@ function displayForecast(city) {
 
 
             //create HTML to contain the above information and append to forecast area
-            var column = $("<div>").attr("class", "col card forecast text-light text-center")
+            var column = $("<div>").attr("class", "col-lg-* card forecast text-light text-center")
             var dateLine = $("<h5>").text(fullDateFC)
             var iconLine = $("<div>")
             var iconImg = $("<img>").attr({
