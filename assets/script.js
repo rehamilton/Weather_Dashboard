@@ -105,9 +105,9 @@ function displayForecast() {
         method: "GET"
     }).then(function(response) {
 
-        for (i = 0 ; i <= 33 ; i+=8) {
-            var tempForecast =((response.list[i].main.temp)-273.1).toFixed(2);
-            var humidityForecast = (response.list[i].main.humidity);
+        for (i = 0 ; i <= 50 ; i+=8) {
+            var tempFC ="Temp: " + ((response.list[i].main.temp)-273.1).toFixed(2);
+            var humidityFC = "Humidity: " + (response.list[i].main.humidity) + "%";
             var unixDateFC = (response.list[i].dt)*1000;
             var dateFC = new Date(unixDateFC)
             var yearFC = dateFC.getFullYear()
@@ -117,17 +117,25 @@ function displayForecast() {
             var iconFC = (response.list[i].weather[0].icon);
             var iconUrlFC = "http://openweathermap.org/img/w/" + iconFC + ".png";
 
-    
+            
+            
+            var column = $("<div>").attr("class", "col card forecast text-light text-center")
+            var dateLine = $("<h5>").text(fullDateFC)
+            var iconLine = $("<div>")
+            var iconImg = $("<img>").attr({
+                src: iconUrlFC,
+                alt: "weatherImage"})
 
-            console.log(response);
-            console.log(tempForecast);
-            console.log(humidityForecast);
-            console.log(fullDateFC);
-            console.log(icon);
+            iconLine.append(iconImg)
 
+            var tempLine = $("<div>").text(tempFC)
+            var humidityLine = $("<div>").text(humidityFC)
 
+            column.append(dateLine, iconLine, tempLine, humidityLine)
 
-        }
+            $("#forecast").append(column)           
+
+        };
         
         
     })
@@ -135,3 +143,4 @@ function displayForecast() {
 }
 
 displayForecast()
+
