@@ -33,3 +33,7 @@ h5 {
 .forecast {
     border-radius: 20px;
 }
+
+.error {
+    color: red;
+}
