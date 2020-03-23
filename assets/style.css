@@ -37,3 +37,11 @@ h5 {
 .error {
     color: red;
 }
+
+/*Changes to formatting when screen size changes*/
+@media screen and (max-width: 640px) {
+
+    .forecast {
+        flex-direction: column;
+    }
+}

@@ -178,6 +178,8 @@ function displayForecast(city) {
         method: "GET"
     }).then(function(response) {
 
+        $("#forecast").empty();
+
         //loop through the api object array for each day (day split into 3 hr increments so every 7th index required)
         for (i = 7 ; i <= 40 ; i+=7) {
             var tempFC ="Temp: " + ((response.list[i].main.temp)-273.1).toFixed(2) + " ℃";
