@@ -26,7 +26,7 @@ THEN I am again presented with current and future conditions for that city
 
 ## Live Link
 
-### [Scheduler Link](https://rehamilton.github.io/Weather_Dashboard/ "Weather")
+### [Weather Dashboard Link](https://rehamilton.github.io/Weather_Dashboard/ "Weather")
 
 ## On Page Open
 
