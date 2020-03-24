@@ -1,3 +1,7 @@
+body{
+    background-image: url("/assets/weather.png") ;
+}
+
 .jumbotron {
     padding: 32px !important;
 }
@@ -45,4 +49,9 @@ h5 {
 /*styling for title when error occurs*/
 .error {
     color: red;
+}
+
+#uv {
+    border-radius: 10px;
+    padding: 5px;
 }
